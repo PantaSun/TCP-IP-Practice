@@ -14,7 +14,7 @@
 #include<string.h>
 #include"tlpi_hdr.h"
 
-#define BUF_SIZE 100
+#define BUF_SIZE 4
 #define EPOLL_SIZE 50
 
 int main(int argc, char* argv[]){
@@ -66,7 +66,7 @@ int main(int argc, char* argv[]){
         event_cnt = epoll_wait(efd, ep_events, EPOLL_SIZE, -1);
         if(event_cnt == -1)
             errExit("epoll_wait");
-        puts("return epoll_wait");
+        puts("return epoll_wait block tl");
         for(int i=0; i < event_cnt; i++){
             if(ep_events[i].data.fd == serv_sock)
             {
