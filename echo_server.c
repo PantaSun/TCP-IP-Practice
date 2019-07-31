@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
         errExit("listen");
     
     clnt_addr_size = sizeof(clnt_addr);
-    /*for (int i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         clnt_sock = accept(serv_sock, (struct sockaddr*)&clnt_addr, &clnt_addr_size);
         if(clnt_sock == -1){
@@ -51,8 +51,7 @@ int main(int argc, char const *argv[])
         
         close(clnt_sock);
     }
-*/
-	sleep(10000);
+
     close(serv_sock);
     return 0;
 }
