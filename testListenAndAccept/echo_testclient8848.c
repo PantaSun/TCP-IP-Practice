@@ -31,7 +31,8 @@ int main(int argc, char const *argv[])
     if(connect(sock, (struct sockaddr*) &serv_addr, sizeof(serv_addr)) ==-1)
         errExit("connect");
     else
-        printf("connect success!!");
+        printf("connect success!!\n");
+
     while (1)
     {
         fputs("Send Message(Q/q for quit): ", stdout);
