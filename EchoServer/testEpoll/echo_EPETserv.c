@@ -100,6 +100,7 @@ int main(int argc, char* argv[]){
                         epoll_ctl(efd, EPOLL_CTL_DEL, ep_events[i].data.fd, NULL);
                         close(ep_events[i].data.fd);
                         printf("closed client: %d\n",ep_events[i].data.fd);
+                        break;
                     }
                     else if(str_len < 0) // 未读取到数据
                     {
