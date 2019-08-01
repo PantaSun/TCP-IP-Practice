@@ -1,3 +1,9 @@
+/*************************************************************************
+    > File Name: echo_client.c
+    > Author: PantaSun
+    > Mail: sunsky2333@gmail.com
+    > Created Time: Wed 29 May 2019 12:02:57 PM CST
+ ************************************************************************/
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -40,6 +46,8 @@ int main(int argc, char const *argv[])
         recv_len = 0;
         while(recv_len < str_len){
             recv_cnt = read(sock, &message[recv_len], MAXSTRLEN-1);
+            if(recv_cnt == -1)
+                errExit（"read");
             recv_len += recv_cnt;
         }
         message[recv_len] = '\0';
